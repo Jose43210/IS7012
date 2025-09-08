@@ -1,0 +1,115 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" asp-page="/Index">Join Our Team</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" asp-page="/Index">Home</a></li>
+        <li class="nav-item"><a class="nav-link" asp-page="/OurTeam">Our Team</a></li>
+        <li class="nav-item"><a class="nav-link" asp-page="/Contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<footer class="text-center mt-5 p-3 bg-dark text-white">
+  &copy; 2025 Esquivel Co — Connecting Talent with Opportunity
+</footer>
+
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Welcome to Esquivel Co</h1>
+      <p>Our craft lies in the results of placing industry leaders with strategic roles.</p>
+      <ul>
+        <li><strong>Address:</strong> 999 Recruitment Road, Cincinnati, OH</li>
+        <li><strong>Phone:</strong> (123) 456-7890</li>
+        <li><strong>Industries:</strong> Supply Chain, Media, Manufacturing</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Executive Leaders</h5>
+          <p class="card-text">The team that locates talent to drive business results.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Tech Talent</h5>
+          <p class="card-text">Product Owners, Engineers, and Data Scientists.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Remote Hiring</h5>
+          <p class="card-text">Global presence to lead global organizations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <h3 class="mt-5">Testimonials</h3>
+  <blockquote class="blockquote">
+    <p>"Esquivel Co was crucial in helping us find the right talent for the right role at the right time"</p>
+    <footer class="blockquote-footer">CTO, IS7012</footer>
+  </blockquote>
+
+  <hr />
+
+  <h3 class="mt-5">How to Join Our Community</h3>
+  <ol>
+    <li>Submit your resume through the Esquivel Co portal</li>
+    <li>Be placed with your top employers</li>
+    <li>Interview successfully and receive your job offer</li>
+  </ol>
+</div>
+
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Meet Our Team</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Jose Esquivel</h5>
+          <p class="card-text">Founder & CEO. Passionate about connecting talent with opportunity.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Travis Kelce</h5>
+          <p class="card-text">Lead Recruiter. Specializes in tech placements and remote hiring.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Taylor Swift</h5>
+          <p class="card-text">Client Success Manager. Ensures smooth onboarding and retention.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
