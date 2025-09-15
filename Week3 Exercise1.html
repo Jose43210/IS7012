@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Week3 Exercise1</title>
+  <style>
+    body { font-family: Georgia, 'Times New Roman', Times, serif, sans-serif; margin: 2rem; background-color: greenyellow; }
+    .model { background: #fff; padding: 1rem 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #2c3e50; }
+    ul { list-style: none; padding-left: 0; }
+    li { padding: 4px 0; }
+    .relationship { font-style: italic; color: #555; }
+  </style>
+</head>
+<body>
+
+  <div class="model">
+    <h2>AccountHolder</h2>
+    <ul>
+      <li><strong>First Name</strong>: string</li>
+      <li><strong>Last Name</strong>: string</li>
+      <li><strong>Date</strong>: int</li>
+      <li><strong>Account ID</strong>: string (maps to BankAcctNum)</li>
+      <li><strong>AgeOfAcct</strong>: int</li>
+    </ul>
+    <p class="relationship">Owns multiple BankAccounts</p>
+  </div>
+
+  <div class="model">
+    <h2>BankAccount</h2>
+    <ul>
+      <li><strong>BankAcctNum</strong>: string</li>
+      <li><strong>Balance</strong>: long</li>
+    </div>
+</body>
+
+    
+<head>
+  <meta charset="UTF-8">
+  <title>Recruiting Models</title>
+  <style>
+    body { font-family: Georgia, 'Times New Roman', Times, serif, sans-serif; margin: 2rem; background-color: #f0f8ff; }
+    .model { background: #fff; padding: 1rem 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #34495e; }
+    ul { list-style: none; padding-left: 0; }
+    li { padding: 4px 0; }
+    .relationship { font-style: italic; color: #666; }
+  </style>
+</head>
+<body>
+
+  <div class="model">
+    <h2>Candidate</h2>
+    <ul>
+      <li><strong>First Name</strong>: string</li>
+      <li><strong>Last Name</strong>: string</li>
+      <li><strong>Target Salary</strong>: decimal</li>
+      <li><strong>Start Date</strong>: DateTime? (nullable)</li>
+      <li><strong>Job Role Id</strong>: int</li>
+      <li><strong>Industry Id</strong>: int</li>
+      <li><strong>Company Id</strong>: int (nullable)</li>
+    </ul>
+    <p class="relationship">Belongs to one JobTitle and one Industry; optionally linked to one Company</p>
+  </div>
+
+  <div class="model">
+    <h2>Company</h2>
+    <ul>
+      <li><strong>Name</strong>: string</li>
+      <li><strong>Position Name</strong>: string</li>
+      <li><strong>Min Salary</strong>: decimal</li>
+      <li><strong>Max Salary</strong>: decimal</li>
+      <li><strong>Start Date</strong>: DateTime? (nullable)</li>
+      <li><strong>Location</strong>: string</li>
+      <li><strong>Industry Id</strong>: int</li>
+    </ul>
+    <p class="relationship">Has many Candidates; belongs to one Industry</p>
+  </div>
+
+  <div class="model">
+    <h2>JobTitle</h2>
+    <ul>
+      <li><strong>Title</strong>: string</li>
+      <li><strong>Min Salary</strong>: decimal</li>
+      <li><strong>Max Salary</strong>: decimal</li>
+    </ul>
+    <p class="relationship">Linked to many Candidates</p>
+  </div>
+
+  <div class="model">
+    <h2>Industry</h2>
+    <ul>
+      <li><strong>Name</strong>: string</li>
+    </ul>
+    <p class="relationship">Linked to many Candidates and Companies</p>
+  </div>
+
+</body>
+</html>
