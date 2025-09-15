@@ -1,36 +1,41 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
 @model BankApp.Models.AccountHolder
 @{
     ViewData["Title"] = "Create Account Holder";
 }
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <div class="container mt-5">
-    <div class="card shadow-sm">
+    <div class="card shadow-lg">
         <div class="card-header bg-primary text-white">
-            <h4><i class="bi bi-person-plus-fill"></i> Create Account Holder</h4>
+            <h4><i class="bi bi-person-plus-fill"></i> Create Account</h4>
         </div>
         <div class="card-body">
-            <form asp-action="Create" class="row g-3">
+            <form asp-action="Create" method="post" class="row g-3">
                 <div class="col-md-6">
-                    <label asp-for="AccountHolderId" class="form-label">ID</label>
-                    <input asp-for="AccountHolderId" class="form-control" />
+                    <label asp-for="AccountHolderId" class="form-label"></label>
+                    <input asp-for="AccountHolderId" class="form-control" placeholder="e.g. AH001" />
+                    <span asp-validation-for="AccountHolderId" class="text-danger"></span>
                 </div>
                 <div class="col-md-6">
-                    <label asp-for="FirstName" class="form-label">First Name</label>
-                    <input asp-for="FirstName" class="form-control" />
+                    <label asp-for="First Name" class="form-label"></label>
+                    <input asp-for="First Name" class="form-control" placeholder="First Name" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
                 <div class="col-md-6">
-                    <label asp-for="LastName" class="form-label">Last Name</label>
-                    <input asp-for="LastName" class="form-control" />
+                    <label asp-for="LastName" class="form-label"></label>
+                    <input asp-for="LastName" class="form-control" placeholder="Last Name" />
+                    <span asp-validation-for="Last Name" class="text-danger"></span>
                 </div>
                 <div class="col-md-3">
-                    <label asp-for="Date" class="form-label">Birth Year</label>
-                    <input asp-for="Date" class="form-control" />
+                    <label asp-for="Date" class="form-label"></label>
+                    <input asp-for="Date" class="form-control" placeholder="Birth Year" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
                 </div>
                 <div class="col-md-3">
-                    <label asp-for="AgeOfAcct" class="form-label">Account Age</label>
-                    <input asp-for="AgeOfAcct" class="form-control" />
+                    <label asp-for="AgeOfAcct" class="form-label"></label>
+                    <input asp-for="AgeOfAcct" class="form-control" placeholder="Account Age" />
+                    <span asp-validation-for="AgeOfAcct" class="text-danger"></span>
                 </div>
                 <div class="col-12 text-end">
                     <button type="submit" class="btn btn-success">Create</button>
@@ -45,6 +50,8 @@
 @{
     ViewData["Title"] = "Account Holders";
 }
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
@@ -67,15 +74,15 @@
         @foreach (var holder in Model)
         {
             <tr>
-                <td>@holder.AccountHolderId</td>
-                <td>@holder.FirstName</td>
-                <td>@holder.LastName</td>
-                <td>@holder.Date</td>
-                <td>@holder.AgeOfAcct</td>
+                <td>Esquivel.43</td>
+                <td>Jose</td>
+                <td>Esquivel</td>
+                <td>07.31.95</td>
+                <td>14</td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@holder.AccountHolderId" class="btn btn-info btn-sm"><i class="bi bi-eye-fill"></i></a>
-                    <a asp-action="Edit" asp-route-id="@holder.AccountHolderId" class="btn btn-warning btn-sm"><i class="bi bi-pencil-fill"></i></a>
-                    <a asp-action="Delete" asp-route-id="@holder.AccountHolderId" class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></a>
+                    <a asp-action="Details" asp-route-id="@holder.AccountHolderId" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Edit" asp-route-id="@holder.AccountHolderId" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@holder.AccountHolderId" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
         }
@@ -88,32 +95,35 @@
     ViewData["Title"] = "Edit Account Holder";
 }
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <div class="container mt-5">
-    <div class="card shadow-sm">
+    <div class="card shadow-lg">
         <div class="card-header bg-warning text-dark">
             <h4><i class="bi bi-pencil-square"></i> Edit Account Holder</h4>
         </div>
         <div class="card-body">
-            <form asp-action="Edit" class="row g-3">
+            <form asp-action="Edit" method="post" class="row g-3">
+                <input type="hidden" asp-for="AccountHolderId" />
                 <div class="col-md-6">
-                    <label asp-for="AccountHolderId" class="form-label">ID</label>
-                    <input asp-for="AccountHolderId" class="form-control" readonly />
-                </div>
-                <div class="col-md-6">
-                    <label asp-for="FirstName" class="form-label">First Name</label>
+                    <label asp-for="FirstName" class="form-label"></label>
                     <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
                 <div class="col-md-6">
-                    <label asp-for="LastName" class="form-label">Last Name</label>
+                    <label asp-for="LastName" class="form-label"></label>
                     <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
                 <div class="col-md-3">
-                    <label asp-for="Date" class="form-label">Birth Year</label>
+                    <label asp-for="Date" class="form-label"></label>
                     <input asp-for="Date" class="form-control" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
                 </div>
                 <div class="col-md-3">
-                    <label asp-for="AgeOfAcct" class="form-label">Account Age</label>
+                    <label asp-for="AgeOfAcct" class="form-label"></label>
                     <input asp-for="AgeOfAcct" class="form-control" />
+                    <span asp-validation-for="AgeOfAcct" class="text-danger"></span>
                 </div>
                 <div class="col-12 text-end">
                     <button type="submit" class="btn btn-primary">Save</button>
@@ -129,16 +139,18 @@
     ViewData["Title"] = "Account Holder Details";
 }
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <div class="container mt-5">
     <div class="card shadow-sm">
         <div class="card-header bg-info text-white">
             <h4><i class="bi bi-person-lines-fill"></i> Details</h4>
         </div>
         <div class="card-body">
-            <p><strong>ID:</strong> @Model.AccountHolderId</p>
-            <p><strong>Name:</strong> @Model.FirstName @Model.LastName</p>
-            <p><strong>Birth Year:</strong> @Model.Date</p>
-            <p><strong>Account Age:</strong> @Model.AgeOfAcct</p>
+            <p><strong>ID:</strong> Esquivel.43</p>
+            <p><strong>Name:</strong> Jose Esquivel</p>
+            <p><strong>Birth Year:</strong> 07.31.05</p>
+            <p><strong>Account Age:</strong> 14</p>
         </div>
         <div class="card-footer text-end">
             <a asp-action="Edit" asp-route-id="@Model.AccountHolderId" class="btn btn-warning">Edit</a>
@@ -152,6 +164,8 @@
     ViewData["Title"] = "Delete Account Holder";
 }
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <div class="container mt-5">
     <div class="card border-danger shadow-sm">
         <div class="card-header bg-danger text-white">
@@ -161,7 +175,7 @@
             <p>Are you sure you want to delete <strong>@Model.FirstName @Model.LastName</strong>?</p>
         </div>
         <div class="card-footer text-end">
-            <form asp-action="DeleteConfirmed">
+            <form asp-action="DeleteConfirmed" method="post">
                 <input type="hidden" asp-for="AccountHolderId" />
                 <button type="submit" class="btn btn-danger">Delete</button>
                 <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
